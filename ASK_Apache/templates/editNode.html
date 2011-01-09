@@ -1,0 +1,16 @@
+<form method="post">
+	<fieldset>
+		<legend>{{ node.name }} <input value={{ node.rootData }} />
+			<input type="submit" value="Zapisz" />
+			<input type="submit" value="Anuluj" />
+		</legend>
+		{% for data in node.data %}
+		{{ data.key }}: <input value='{{ data.value }}' />
+		<br />
+		{% endfor %}
+	</fieldset>
+	
+	{{ form.as_p }}
+	
+	<input type="submit" value="Submit" />
+</form>

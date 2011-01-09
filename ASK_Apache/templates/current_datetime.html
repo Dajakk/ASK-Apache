@@ -1,0 +1,32 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+	<head>
+		<title>Przykład dokumentu zgodnego z XHTML 1.0 Strict</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!--<link rel="stylesheet" type="text/css" href="style.css" />-->
+		<style type="text/css">
+			span {background-color: gray; }
+		</style>
+	
+	</head>
+	<body>
+		<h1>Apache VHost config</h1>
+		<form method="post">
+			{% for node in virtualHost.nodes %}
+			<fieldset>
+				<legend>{{ node.name }} <span>{{ node.rootData }}</span>
+					<input type="submit" value="Edytuj" />
+					<input type="submit" value="Usuń" />
+				</legend>
+				{% for data in node.data %}
+				{{ data.key }}: <span>{{ data.value }}</span>
+				<br />
+				{% endfor %}
+			</fieldset>
+			{% endfor %}
+			<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>
