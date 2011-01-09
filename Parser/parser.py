@@ -80,13 +80,14 @@ class HttpConf( object ):
 	newNodeStart = re.compile( r"[<][A-Za-z].*" )
 	newNodeEnd = re.compile( r"</.*" )
 
-	global_root_name = ""
-	global_root_data = []
-	opening_line = ""
-	name = ""
-	rootData = ""
-	nodes = []
-	data = []
+	def __init__(self):
+		self.global_root_name = ""
+		self.global_root_data = []
+		self.opening_line = ""
+		self.name = ""
+		self.rootData = ""
+		self.nodes = []
+		self.data = []
 
 
 	def save_to_file(self, filename):
@@ -204,14 +205,15 @@ class VirtualHost( object ):
 	newNodeStart = re.compile( r"[<][A-Za-z].*" )
 	newNodeEnd = re.compile( r"</.*" )
 
-	global_root_name = ""
-	global_root_data = []
-	opening_line = ""
+	def __init__(self):
+		self.global_root_name = ""
+		self.global_root_data = []
+		self.opening_line = ""
 
-	name = ""
-	rootData = ""
-	nodes = []
-	data = []
+		self.name = ""
+		self.rootData = ""
+		self.nodes = []
+		self.data = []
 
 	def save_to_file(self, filename):
 		"""
